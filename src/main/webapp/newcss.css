@@ -15,4 +15,11 @@ div {
     margin-right: 25%;
     float: right;
 }
+.button {
+    text-align: center;
+    color: black;
+    background-color: crimson;
+    
+}
+
 
