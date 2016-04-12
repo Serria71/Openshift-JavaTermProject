@@ -3,6 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -30,7 +33,25 @@ public class Utils {
     }
     public final static String SALT = "NUMBSofCHARACTERSthatAREusedfTOsaltsTHESTring";
     
-    
+    public static String hash(String password) {
+        try {
+            String salted = password + SALT;
+            MessageDigest mess = MessageDigest.getInstance("SHA1");
+            byte[] hash = mess.digest(salted.getBytes("UTF-8"));
+            StringBuilder stb = new StringBuilder();
+            for (byte b : hash) {
+                String hex = Integer.toHexString(b & 0xff).toUpperCase();
+                if (hex.length() == 1) {
+                    stb.append("0");
+                }
+                stb.append(hex);
+            }
+            return stb.toString();
+        } catch (NoSuchAlgorithmException | UnsupportedEncodingException ex) {
+            Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null ex);
+            return null;
+        }
+    }
     
     
 }
