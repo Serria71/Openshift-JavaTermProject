@@ -51,7 +51,7 @@ public class UserController {
                 User r = new User (
                     res.getInt("id"),
                     res.getString("userName"),
-                    res.getString("passhash")
+                    res.getString("password")
                 );
             users.add(r);
             }

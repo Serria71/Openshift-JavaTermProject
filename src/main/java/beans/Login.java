@@ -43,15 +43,17 @@ public class Login {
     public void setLoggedIn(boolean loggedIn) {
         this.loggedIn = loggedIn;
     }
-    public String login(){
+    public String login() {
         String passhash = Utils.hash(password);
-        for (User u : new UserController().getUsers()){
-           if (username.equals(u.getUsername())
-                   && passhash.equals(u.getPasshash())) {
-               loggedIn = true;
-               return "game";
-           }
+
+        for (User u : new UserController().getUsers()) {
+            if (username.equals(u.getUsername())
+                    && passhash.equals(u.getPasshash())) {
+                loggedIn = true;
+                return "game";
+            }
         }
+        // If the Loop Ends -- No User Exists
         loggedIn = false;
         return "index";
     }
