@@ -25,21 +25,13 @@ public class Utils {
             Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
-        String host = System.getenv("OPENSHIFT_MYSQL_DB_HOST");
-        String port = System.getenv("OPENSHIFT_MYSQL_DB_PORT");
-        String name = "rog";
-        String url = "jdbc:mysql://" + host + ":" + port + "/" + name;
-        String username = System.getenv("OPENSHIFT_MYSQL_DB_USERNAME");
-        String password = System.getenv("OPENSHIFT_MYSQL_DB_PASSWORD");
-        Connection con = DriverManager.getConnection(url, username, password);
-        return con;
-        //String host = "";
-        //String port = "";
-        //String db = "";
-        //String user = "";
-        //String pass = "";
-        //String jdbc = "jdbc:mysql://" + host + ":" + port + "/" + db;
-        //return DriverManager.getConnection(jdbc, user, pass);
+        String host = "127.2.54.130";
+        String port = "3306";
+        String db = "rogueliketest2";
+        String user = "admineA57uN5";
+        String pass = "xMn1gBDii5W9";
+        String jdbc = "jdbc:mysql://" + host + ":" + port + "/" + db;
+        return DriverManager.getConnection(jdbc, user, pass);
     }
     public final static String SALT = "NUMBSofCHARACTERSthatAREusedfTOsaltsTHESTring";
     
