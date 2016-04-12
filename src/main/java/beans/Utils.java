@@ -27,7 +27,7 @@ public class Utils {
         }
         String host = "127.2.54.130";
         String port = "3306";
-        String db = "rogueliketest2";
+        String db = "roguelikegame2";
         String user = "admineA57uN5";
         String pass = "xMn1gBDii5W9";
         String jdbc = "jdbc:mysql://" + host + ":" + port + "/" + db;
