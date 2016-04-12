@@ -43,7 +43,7 @@ public class Login {
     public void setLoggedIn(boolean loggedIn) {
         this.loggedIn = loggedIn;
     }
-    public String doLogin(){
+    public String login(){
         String passhash = Utils.hash(password);
         for (User u : new UserController().getUsers()){
            if (username.equals(u.getUsername())
