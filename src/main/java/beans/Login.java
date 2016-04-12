@@ -61,7 +61,7 @@ public class Login {
         String passhash = Utils.hash(password);
      
         for (User u: new UserController().getUsers()){
-            if (!username.equals(u.getUsername()) && !passhash.equals(u.getPasshash())){
+            if (!username.equals(u.getUsername())){
                 UserController.addUser(username, passhash);
                 loggedIn = true;
                 return "game";
