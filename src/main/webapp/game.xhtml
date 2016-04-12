@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="newcss.css" type="text/css"/>
     </head>
     <body>
-        <c:if test="#{!login.loggedIn}">
+        <c:if test="#{login.loggedIn}">
             <div>
                 <object type="application/x-java-applet" width="760" height="393">
                     <param name="code" value="rogueliketest.AppletMain.class"/>
