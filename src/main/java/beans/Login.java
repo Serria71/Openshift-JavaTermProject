@@ -20,16 +20,6 @@ public class Login {
     private String username;
     private String password;
     private boolean loggedIn;
-    private String confirmPassword;
-
-    public String getConfirmPassword() {
-        return confirmPassword;
-    }
-
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
-    }
-    
 
     public String getUsername() {
         return username;
@@ -69,20 +59,15 @@ public class Login {
     }
     public String create(){
         String passhash = Utils.hash(password);
-        String passhashC = Utils.hash(confirmPassword);
-        
-        if (passhash == passhashC){
-            for (User u: new UserController().getUsers()){
-                if (username.equals(u.getUsername()) && passhash.equals(u.getPasshash())){
-                    UserController.addUser(username, password);
-                    loggedIn = true;
-                    return "game";
-                } else {
-                    return "index";
-                }
+     
+        for (User u: new UserController().getUsers()){
+            if (!username.equals(u.getUsername()) && !passhash.equals(u.getPasshash())){
+                UserController.addUser(username, passhash);
+                loggedIn = true;
+                return "game";
+            } else {
+                return "index";
             }
-        } else {
-            return "index";
         }
         return "index";
     }
