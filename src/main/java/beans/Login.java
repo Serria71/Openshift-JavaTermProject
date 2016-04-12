@@ -20,6 +20,7 @@ public class Login {
     private String username;
     private String password;
     private boolean loggedIn;
+    private String confirmPassword;
 
     public String getUsername() {
         return username;
@@ -55,6 +56,25 @@ public class Login {
         }
         // If the Loop Ends -- No User Exists
         loggedIn = false;
+        return "index";
+    }
+    public String create(){
+        String passhash = Utils.hash(password);
+        String passhashC = Utils.hash(confirmPassword);
+        
+        if (passhash == passhashC){
+            for (User u: new UserController().getUsers()){
+                if (username.equals(u.getUsername()) && passhash.equals(u.getPasshash())){
+                    UserController.addUser(username, password);
+                    loggedIn = true;
+                    return "game";
+                } else {
+                    return "index";
+                }
+            }
+        } else {
+            return "index";
+        }
         return "index";
     }
     
