@@ -1,3 +1,5 @@
+package beans;
+
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -31,7 +33,7 @@ public class UserController {
     public String getUsernameById(int id){
         for (User r : users) {
             if (r.getId() == id)
-                return r.getUserName();
+                return r.getUsername();
         }
         return null;
     }
@@ -46,15 +48,15 @@ public class UserController {
             ResultSet res = stmt.executeQuery(sql);
             
             while (res.next()) {
-                User r = new User {
+                User r = new User (
                     res.getInt("id"),
                     res.getString("userName"),
                     res.getString("passhash")
-            };
+                );
             users.add(r);
             }
             
-        } catch (SQLExeception ex) {
+        } catch (SQLException ex) {
             Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

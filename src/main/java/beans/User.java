@@ -1,3 +1,5 @@
+package beans;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -17,9 +19,15 @@ public class User {
     );
     */
     private int id;
-    private String userName;
+    private String username;
     private String passhash;
-
+    
+    public User (int id, String username, String passhash) {
+        this.id = id;
+        this.username = username;
+        this.passhash = passhash;
+    }
+    
     public int getId() {
         return id;
     }
@@ -29,12 +37,12 @@ public class User {
     }
 
     
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPasshash() {
@@ -44,10 +52,5 @@ public class User {
     public void setPasshash(String passhash) {
         this.passhash = passhash;
     }
-    
-    public User (int id, String userName, String passhash) {
-        this.id = id;
-        this.userName = userName;
-        this.passhash = passhash;
-    }
+
 }
