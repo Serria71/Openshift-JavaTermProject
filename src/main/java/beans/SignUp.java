@@ -44,9 +44,7 @@ public class SignUp {
         this.confirmPassword = confirmPassword;
     }
     
-    public String Register() {
-        
-        
+    public String Register() {       
         return "index";
     }
 }

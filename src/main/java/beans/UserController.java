@@ -63,11 +63,13 @@ public class UserController {
     
     public static void addUser(String username, String password) {
         try (Connection conn = Utils.getConnection()) {
-            String sql = "INSERT INTO users (username, password) VALUES(?,?)";
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, username);
-            pstmt.setString(2, password);
-            pstmt.executeUpdate();
+            if (username != "" && password != ""){
+                String sql = "INSERT INTO users (username, password) VALUES(?,?)";
+                PreparedStatement pstmt = conn.prepareStatement(sql);
+                pstmt.setString(1, username);
+                pstmt.setString(2, password);
+                pstmt.executeUpdate();
+            } 
         } catch (SQLException ex) {
             Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
         }
