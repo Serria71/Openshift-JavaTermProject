@@ -8,7 +8,10 @@ and open the template in the editor.
     Author     : c0640780
 */
 html {
-    background-color: black;
+    background-image: url("http://data.whicdn.com/images/27696473/large.jpg");
+}
+h1 {
+    color: green;
 }
 div {
     margin-left: 25%;
