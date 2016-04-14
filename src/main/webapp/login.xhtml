@@ -8,13 +8,15 @@
     </h:head>
     <h:body>
         <section>
-            <h1>Welcome to our Rogue like Fantasy Game. Please stay awhile</h1>
-                <h:form>
-                    <p>Username: <h:inputText value="#{login.username}" /></p>
-                    <p>Password: <h:inputSecret value="#{login.password}" /></p>
-                    <h:commandButton value="Login" action="#{login.login()}" />
-                </h:form>
-            <p>Don't have an account? <a href="create.xhtml">Create one here!</a></p>
+            <div>
+                <h1>Welcome to our Rogue like Fantasy Game. Please stay awhile</h1>
+                    <h:form>
+                        <p>Username: <h:inputText value="#{login.username}" /></p>
+                        <p>Password: <h:inputSecret value="#{login.password}" /></p>
+                        <h:commandButton value="Login" action="#{login.login()}" />
+                    </h:form>
+                <p>Don't have an account? <a href="create.xhtml">Create one here!</a></p>
+            </div>
         </section>
     </h:body>
 </html>
