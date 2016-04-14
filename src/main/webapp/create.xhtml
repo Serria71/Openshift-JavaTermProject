@@ -7,11 +7,15 @@
         <link rel='stylesheet' href='newcss.css'></link>
     </h:head>
     <h:body>
-        <h:form>
-            <p>Register Username: <h:inputText value="#{login.username}" /></p>
-            <p>Register Password: <h:inputSecret value="#{login.password}" /></p>
-            <h:commandButton value="Sign Up" action="#{login.create()}" />
-        </h:form>
-        <p><a href="login.xhtml">Want to Return to the Main page well here you go.</a></p>
+        <section>
+            <div>
+                <h:form>
+                    <p>Register Username: <h:inputText value="#{login.username}" /></p>
+                    <p>Register Password: <h:inputSecret value="#{login.password}" /></p>
+                    <h:commandButton value="Sign Up" action="#{login.create()}"></h:commandButton>
+                    <h:commandButton action="login.xhtml">Return</h:commandButton>
+                </h:form>
+            </div>
+        </section>       
     </h:body>
 </html>
