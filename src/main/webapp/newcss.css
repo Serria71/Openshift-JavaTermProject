@@ -38,6 +38,9 @@ div {
     background-color: crimson;
     
 }
+button.button {
+    margin-left: 10px;
+}
 p {
     color: crimson;
 }
