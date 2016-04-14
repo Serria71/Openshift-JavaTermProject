@@ -21,9 +21,8 @@ section {
  
 }
 div {
-    margin-left: 25%;
-    margin-right: 25%;
-    float: right;
+    text-align: center;
+    padding-top: 25px;
 }
 .button {
     text-align: center;
